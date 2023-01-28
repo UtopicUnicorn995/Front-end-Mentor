@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(30, 38%, 92%);
+}
+
+.main {
+  display: flex;
+  width: 41.7%;
+  position: relative;
+  top: 1px;
+  border-radius: 5px;
+  background-color: #ffff;
+}
+
+.block__container {
+  width: 50%;
+}
+
+.block__image--desktop {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.block__image--mobile {
+  display: none;
+}
+
+.attribution {
+  display: none;
+}
+
+.block__container--text {
+  padding: 15px 32px;
+}
+
+.p__text--top {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 3.9px;
+  text-transform: uppercase;
+}
+
+.p__text--bottom {
+  font-family: "Montserrat", sans-serif;
+  padding-top: 3px;
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text__container--price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+  font-family: "Fraunces", serif;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.text--large {
+  color: hsl(158, 36%, 37%);
+  font-size: 32px;
+}
+
+.text--small {
+  font-size: 11.5px;
+}
+
+.button--addCart {
+  background-color: hsl(158, 36%, 37%);
+  width: 100%;
+  margin-top: -10px;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  column-gap: 11px;
+  color: #ffff;
+  border: none;
+}
+
+@media screen and (max-width: 750px) {
+  .block__image--mobile {
+    display: block;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .block__image--desktop {
+    display: none;
+  }
+
+  body {
+    padding: 26px 15px;
+  }
+
+  .main {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .block__container {
+    width: 100%;
+  }
+
+  .block__container--text {
+    padding: 9px 25px;
+  }
+
+  .p__text--top {
+    letter-spacing: 3.5px;
+  }
+
+  .p__text--bottom {
+    margin-bottom: 1px;
+  }
+
+  h1 {
+    margin: 0;
+    margin-top: -2px;
+    line-height: 1;
+    font-size: 2em;
+  }
+
+  .text__container--price {
+    margin-top: -15px;
+  }
+
+  .button--addCart {
+    margin-top: -16px;
+  }
+}
