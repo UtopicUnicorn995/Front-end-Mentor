@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+:root{
+    --border-1: hsl(249, 99%, 64%);
+    --border-2: hsl(278, 94%, 30%);
+    --red-error: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+p, h1, h2, h3, h4{
+    margin: 0;
+}
+
+.card--container{
+    max-width: 485px;
+    width: 100%;
+    background-image: url(./images/bg-main-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    max-width: 445px;
+    width: 100%;
+    max-height: 248px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    padding: 30px 30px;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.card--front{
+    background-image: url(./images/bg-card-front.png);
+    top: 186px;
+    left: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card--circle-container{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.card--circle-big{
+    height: 48px;
+    width: 48px;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.card--circle-small{
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.card--user-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: -2px;
+}
+
+.card--account-number{
+    font-size: 28px;
+    letter-spacing: 3.5px;
+    margin-bottom: -35px;
+}
+
+.card--back{
+    background-image: url(./images/bg-card-back.png);
+    top: 467px;
+    left: 258px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.card--back p {
+    margin-right: 25px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+
+/* Form section */
+
+.card--form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 120px;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 420px;
+    width: 100%;
+    max-height: 390px;
+    height: 100%;
+    padding: 20px;
+}
+
+.user--input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+input{
+    height: 42px;
+    border-radius: 7px;
+    border: 1px solid var(--light-grayish-violet);
+    outline: none;
+    font-size: 16px;
+    padding-left: 15px;
+    letter-spacing: 1.5px;
+}
+
+.input--error{
+    border: 1px solid var(--red-error);
+    animation: shake 0.3 linear;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+input:focus, input.active{
+    border: 1px solid var(--very-dark-violet);
+}
+
+input::placeholder{
+    color: var(--light-grayish-violet);
+}
+
+.user--input-date-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+   
+}
+
+.user--input-date{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-right: 20px;
+}
+
+.input--date{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input--date input{
+    width: 78px;
+   
+}
+
+label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    margin-top: -1px;
+}
+
+.user--input-cvc{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form--confirm{
+    width: 100%;
+    border: none;
+    background-color: var(--very-dark-violet);
+    color: var(--white);
+    padding: 16.5px 0;
+    border-radius: 7px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-bottom: -2px;
+    margin-top: 12px;
+}
+
+.error{
+    color: var(--red-error);
+    font-size: 12px;
+    font-weight: 200;
+    position: absolute;
+    bottom: -20px;
+}
+
+
+/* For Javascript */
+
+
+/* .d-none{
+    display: none;
+} */
+
+.card--completed-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+}
+
+.card--completed-container button{
+    width: 380px;
+    padding: 16.5px 0;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--very-dark-violet);
+    color: var(--white);
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+h3{
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.completed--thanks{
+    margin-bottom: 25px;
+    color: var(--dark-grayish-violet);
+}
+
+section.card--form-container.card--completed-container {
+    font-size: 18px;
+}
+
+
+
+@media (max-width: 1439px) {
+    .card--container{
+        max-width: 360px;
+    }
+    .card{
+        max-width: 320px;
+        height: 200px;
+    }
+    .card--front{
+        left: 130px;
+    }
+    .card--back{
+        left: 228px;
+    }
+    .card--account-number{
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .card--container{
+        max-width: 240px;
+    }
+    .card--circle-container{
+        display: none;
+    }
+    .card{
+        height: 140px;
+    }
+    .card--front{
+        left: 60px;
+        top: 236px;
+    }
+    .card--back{
+        left: 128px;
+        top: 437px;
+        padding: 20px;
+    }
+    .card--account-number{
+        font-size: 15px;
+    }
+    .card--user-name, .card--user-expiry{
+        font-size: 12px;
+    }
+    .card--back p{
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    body{
+        flex-direction: column;
+    }
+    .card--form-container{
+        padding: 0;
+        height: 100%;
+    }
+    .card--container{
+        background-image: url(./images/bg-main-mobile.png);
+        height: 363px;
+        width: 100%;
+        max-width: 1000px;
+    }
+    form{
+        height: 100%;
+        padding: 90px 24px 46px 24px;
+        max-height: none;
+    }
+    .card--back{
+        top: 33px;
+        left: 72px;
+        padding: 30px;
+    }
+    .card--front{
+        top: 126px;
+        left: 16px;
+        z-index: 2;
+        padding: 17px 19px;
+    }
+    .card{
+        border-radius: 5px;
+        height: 156px;
+        width: 286px;
+    }
+    .card--circle-container{
+        display: flex;
+        column-gap: 10px;
+    }
+    .card--circle-small{
+        height: 14px;
+        width: 14px;
+    }
+    .card--circle-big{
+        width: 32px;
+        height: 32px;
+    }
+    .card--account-number{
+        font-size: 16px;
+        margin-bottom: -20px;
+    }
+    .card--user-name, .card--user-expiry {
+        font-size: 10px;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
+    input{
+        height: 45px;
+    }
+    .input--date{
+        column-gap: 8px;
+    }
+    .input--date input{
+        width: 72px;
+    }
+}
+
+
+.d-none{
+    display: none;
+}
